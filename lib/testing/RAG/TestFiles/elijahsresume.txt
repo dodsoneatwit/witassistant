@@ -1,0 +1,37 @@
+ELIJAH C. DODSON
+37A Edgewood St, Roxbury, MA, 02119 | 857-205-5833 | dodsone@wit.edu                                                                                         Elijah Dodson - Full Stack Engineer Intern - Fidelity Investments | LinkedIn
+Education & Coursework
+Wentworth Institute of Technology, Boston, MA, Graduation: Aug 2024, BA in Computer Science, GPA: 3.58/4.00
+Relevant Coursework: Computer Science I and II, Data Structures, Algorithms, Data Science Fundamentals, OS 
+Mathematics: Calc 1 and 2, Discrete Math, Computer Organizations, Linear Algebra & Matrix Theory 
+Prob. & Stats. for Engineers, Engineering Physics I
+Electives: Global Cities, Microeconomics, Cell and Molecular Biology (Current)
+Cathedral High School, Boston, MA, June 2020, GPA: 4.1/4.33
+Skills & Interests
+Coding Languages: Java, Python, JavaScript, HTML, CSS, Vue.js, React.js (Learning), C/C++ (Basics), F# (Learning)
+Software: Eclipse, PyCharm, Node.js, VSCode, Jupyter Notebook, Command Line, IntelliJ
+AWS: Lambda , S3, CloudWatch (learning)
+Google Drive: Docs, Slides, Forms, Sheets
+Microsoft Office: Outlook, Word, PowerPoint, Excel, Power Apps
+Interests: Front and Back-End development, natural language understanding, AWS, chatbots/AI, stocks/investments
+Job Experience
+Fidelity Investments: 
+Software Developer Co-op (Spring 2023) | Full Stack Engineer Intern (Summer 2022) | Student Fellowship Intern (Summer 2019) 
+Bahtabots Team, Boston, MA, January 10 – April 2023
+Improved an existing user interface by creating a new component with Vue.js and allowed other developers to create chat bots quicker.
+Debugged in areas where code was unresponsive while practicing clean code strategies to create a more organized space.
+Designed diagrams to help with the visualization and development of new projects.
+Cognitive Computing Intern Group, Boston, MA, June 2022- August 2022
+Collaborated with other Tech Summer Interns in a SCRUM environment to implement a machine learning model that compared chat bot utterances and gives more optimal responses and improve user experience for both customers and Fidelity associates.
+Developed JavaScript code onto Transcript Lambda code for the purpose of adding properties to Elasticsearch lambda through Amazon Web Services
+Enterprise Technology Risk Analytics, Boston, MA, June 2019- August 2019
+Analyzed data on various business units through Excel while presenting weekly recaps of the work I’ve accomplished.
+Bridges Program at Wentworth Institute of Technology, Mentor/Coordinator, Boston, MA, May 2023 – June 2023
+Lead a group of upcoming freshmen students as a mentor over the course of a week-long program to help them gain valuable experience of what the school has to offer: community, resources, identity, clubs, environment.
+Managed logistical tasks as a coordinator by making calls, getting students to apply for the program, creating a safe and comfortable environment for the mentees, and helping prepare for events and the program overall.
+Projects
+Created a website with HTML, CSS, JavaScript, and various APIs integrated within to present the archaeological background of the country, Jordan.
+Developed a working Connect-4 and Checkers game using Java, GUI, and Object-Oriented Programming to create a functional two-player game with other features included.
+Community Service
+Volunteer, SAINT FRANCIS HOUSE (December 2017 - January 2018) | THE WOMEN’S LUNCH PLACE (March 2019)
+Assisted with meal preparation, service, and clean-up in the kitchen and dining room to decrease food insecurity for underserved populations.
