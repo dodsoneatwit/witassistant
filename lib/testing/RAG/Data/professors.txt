@@ -174,6 +174,7 @@ Stephanie DeMarco Bartlett Adjunct Instructor, Industrial Design, School of Arch
 Doran Dennis Utility A Worker, Physical Plant dennisd@wit.edu 617-989-4672
 Ryan DePesa Assistant Director/Resident Director, Housing & Residential Education Community Director of Evans Way/Tudbury Hall depesar1@wit.edu 617-989-4060
 Katie DePrimo Executive Director of Alumni Relations & Annual Giving, Institutional Advancement deprimok@wit.edu 617-989-4218
+Salil Desai Assistant Professor, Biological Engineering, School of Engineering desais2@wit.edu 617-989-4857
 Richard Desjardins Adjunct Instructor, Architecture, School of Architecture and Design desjardinsr@wit.edu N/A
 Beth Devonshire Associate General Counsel, President's Office devonshireb@wit.edu 617-989-4186
 Sougata Dhar Regular Track, Computer Science, School of Computing and Data Science dhars@wit.edu 617-989-5362
@@ -693,4 +694,3 @@ Monica Sucic Assistant Director of Annual Giving, Institutional Advancement suci
 Susrutha Babu Sukhavasi Two Semester Appointment, Interdisciplinary Engineering, School of Engineering sukhavasis@wit.edu N/A
 Aamir Suleman Associate Vice President, Institutional Advancement sulemana@wit.edu 617-989-5018
 Robert Sulprizio Supervisor/Sergeant, Public Safety sulprizior@wit.edu 617-989-4438
-Christian Summer Roidt Adjunct Instructor, Architecture, School of Architecture and Design roidtc@wit.edu N/A
