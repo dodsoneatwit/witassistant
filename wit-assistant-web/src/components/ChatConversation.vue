@@ -1,21 +1,27 @@
 <script setup lang="ts">
 import MessageList from './MessageList.vue';
 import MessageEditor from './MessageEditor.vue';
-import { ref, type Ref } from 'vue';
+import { useMessageStore } from '@/stores/messages';
 
-const messages: Ref<Message[]> = ref([{text: 'Welcome to the assistant! What can I help you with?', sender: 'assistant'}]);
+const messages = useMessageStore();
 
 function onMessage(text: string) {
-  messages.value.push({
-    text,
-    sender: 'self'
-  });
+  messages.askQuestion(text);
 
   // TODO: Send question to server, and get response
 }
 </script>
+
 <template>
-  <div>wow</div>
-  <MessageList :messages="messages"/>
-  <MessageEditor @message="onMessage" />
+  <div class="flex-col">
+    <MessageList/>
+    <MessageEditor @message="onMessage" />
+  </div>
 </template>
+
+<style>
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+</style>
