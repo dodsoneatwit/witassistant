@@ -21,6 +21,7 @@ export const useMessageStore = defineStore('message', () => {
     });
 
     // get ai response
+    console.log(import.meta.env.VITE_API_ENDPOINT)
     // await fetch();
   }
 
