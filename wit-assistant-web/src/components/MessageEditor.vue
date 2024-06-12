@@ -20,10 +20,10 @@ function sendMessage() {
 </script>
 
 <template>
-  <div class="question-box">
-    <input type="text" :disabled @keyup:enter="sendMessage" v-model="text">
-    <button type="submit" :disabled @click="sendMessage">Ask</button>
-  </div>
+  <form @submit.prevent="sendMessage" class="question-box">
+    <input type="text" :disabled v-model="text">
+    <button type="submit" :disabled >Ask</button>
+  </form>
 </template>
 
 <style>
