@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import MessageList from './MessageList.vue';
+import ChatMessage from './ChatMessage.vue';
 import MessageEditor from './MessageEditor.vue';
 import { useMessageStore } from '@/stores/messages';
 
-const messages = useMessageStore();
+const mStore = useMessageStore();
 
 function onMessage(text: string) {
-  messages.askQuestion(text);
-
-  // TODO: Send question to server, and get response
+  mStore.askQuestion(text);
 }
 </script>
 
 <template>
   <div class="flex-col">
-    <MessageList/>
+    <li v-for="(mes, index) in mStore.messages" :key="index">
+      <ChatMessage :message="mes" />
+    </li>
     <MessageEditor @message="onMessage" />
   </div>
 </template>
@@ -23,5 +23,10 @@ function onMessage(text: string) {
 .flex-col {
   display: flex;
   flex-direction: column;
+}
+
+li {
+  display: block;
+  margin-bottom: 10px;  
 }
 </style>

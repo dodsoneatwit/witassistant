@@ -1,15 +1,10 @@
 <script setup lang="ts">
+import type { PropType } from 'vue'
+
 defineProps({
-  messageText: {
-    type: String,
+  message: {
+    type: Object as PropType<Message>,
     required: true,
-  },
-  sender: {
-    type: String,
-    default: 'self',
-    validator(value: string) {
-      return ['self', 'assistant'].includes(value);
-    }
   }
 });
 
@@ -18,10 +13,10 @@ defineProps({
 <template>
   <div class="chat-message">
     <div class="message-box" :class="{
-      sent: sender === 'self',
-      recieved: sender !== 'self'
+      sent: message.sender === 'self',
+      recieved: message.sender !== 'self'
     }">
-      {{ messageText }}
+      {{ message.text }}
     </div>
   </div>
 </template>
