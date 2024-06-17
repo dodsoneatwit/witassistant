@@ -21,8 +21,18 @@ export const useMessageStore = defineStore('message', () => {
     });
 
     // get ai response
-    console.log(import.meta.env.VITE_API_ENDPOINT)
-    // await fetch();
+    // console.log(import.meta.env.VITE_API_ENDPOINT)
+    const url = import.meta.env.VITE_API_ENDPOINT + '/q&a';
+    const fetchOptions = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ text })
+    };
+    const answer = await fetch(url, fetchOptions).then(resp => resp.json());
+    response(answer.response);
   }
 
   function response(text: string) {
