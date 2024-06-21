@@ -1,4 +1,5 @@
 # app.py
+from main import *
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
@@ -21,9 +22,9 @@ def process_question():
         if content and 'text' in content:
             received_text = content['text']
             api_text = received_text  # Update the API text
-            response_text = f"You sent: {received_text}"
-            print(response_text)
-            return jsonify({'response': response_text})
+            print(f"You sent: {received_text}")
+            response = run_model(received_text)
+            return jsonify({'response': response})
         else:
             return jsonify({'error': 'Invalid JSON payload'}), 400
     else:
