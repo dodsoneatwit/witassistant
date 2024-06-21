@@ -41,7 +41,7 @@ def get_api_response(url):
 
 
 polling_interval = 5 # wait time to check for API response change
-previous_question = None
+previous_question = ""
 current_question = get_api_response(url) # initializes first question if one exists
 
 print("TESTING")
@@ -56,28 +56,25 @@ while (True):
 
         if current_question != previous_question and current_question != "":
             print("API data as changed!")
-            print(f"New response: {current_question}")
+            print(f"New response: {current_question.text}")
             break
-    
-
-    current_question = previous_question
 
     # searchs for results within database that link to question
-    query_result = generalWit.max_marginal_relevance_search(current_question, k=5, fetch_k=10)
+    query_result = generalWit.max_marginal_relevance_search(current_question.text, k=5, fetch_k=10)
     found_docs = ""
 
     # invokes a response from queried data and context
     for i, doc in enumerate(query_result):
         found_docs = found_docs + doc.page_content + " "
     response = chain.invoke(
-        {"context": found_docs, "question": current_question},
+        {"context": found_docs, "question": current_question.text},
     )
 
     # sends related links alongside response
-    response += "\n\n --Related Links-- \n"
-    for i in query_result:
-        if i.metadata != {}:
-            response += "i.metadata['source']\n"
+    # response += "\n\n --Related Links-- \n"
+    # for i in query_result:
+    #     if i.metadata != {}:
+    #         response += "i.metadata['source']\n"
 
     # posts answer to api to be retrieved from front-end
     payload = {
