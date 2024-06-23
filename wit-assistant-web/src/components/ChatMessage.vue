@@ -12,12 +12,17 @@ defineProps({
 
 <template>
   <div class="chat-message">
-    <div class="message-box" :class="{
-      sent: message.sender === 'self',
-      recieved: message.sender !== 'self'
-    }">
-      {{ message.text }}
-    </div>
+    <v-chip 
+      size="x-large"
+      density="comfortable"
+      variant="elevated"
+      :color= "message.sender === 'self' ? 'amber-accent-1' : 'indigo-darken-3'"
+      class="message-box" :class="{
+        sent: message.sender === 'self',
+        recieved: message.sender !== 'self'
+      }">
+        {{ message.text }}
+  </v-chip>
   </div>
 </template>
 
@@ -28,7 +33,7 @@ defineProps({
 .message-box {
   border-radius: 6px;
   padding: 10px;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .message-box.sent {
