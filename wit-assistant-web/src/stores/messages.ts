@@ -6,6 +6,7 @@ export const useMessageStore = defineStore('message', () => {
     text: 'Welcome to the assistant! What can I help you with?',
     sender: 'assistant'
   }]);
+  const loading: Ref<boolean> = ref(false);
 
   // const doubleCount = computed(() => count.value * 2)
   const latest = computed(() => messages.value);
@@ -31,16 +32,21 @@ export const useMessageStore = defineStore('message', () => {
       },
       body: JSON.stringify({ text })
     };
-    const answer = await fetch(url, fetchOptions).then(resp => resp.json());
+    loading.value = true;
+    const answer = await fetch(url, fetchOptions).then(resp => resp.json()).catch(err => {
+      loading.value = false;
+      console.warn('Error querying API: ' + err);
+      });
     response(answer.response);
   }
 
   function response(text: string) {
+    loading.value = false;
     pushMessage({
       text,
       sender: 'assistant'
     })
   }
 
-  return { messages, latest, pushMessage, askQuestion, response }
+  return { messages, latest, loading, pushMessage, askQuestion, response }
 })

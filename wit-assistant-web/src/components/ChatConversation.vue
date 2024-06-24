@@ -8,6 +8,9 @@ const mStore = useMessageStore();
 function onMessage(text: string) {
   mStore.askQuestion(text);
 }
+
+// TODO: Add loading message to make it clear a response is coming, and that's why the ask box is disabled
+// TODO: Maybe extract message box out to make it easier to have error messages and such?
 </script>
 
 <template>
@@ -15,7 +18,7 @@ function onMessage(text: string) {
     <li v-for="(mes, index) in mStore.messages" :key="index">
       <ChatMessage :message="mes" />
     </li>
-    <MessageEditor @message="onMessage" />
+    <MessageEditor @message="onMessage" :disabled="mStore.loading" />
   </div>
 </template>
 
