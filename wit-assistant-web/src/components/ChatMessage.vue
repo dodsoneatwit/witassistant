@@ -7,7 +7,6 @@ defineProps({
     required: true,
   }
 });
-
 </script>
 
 <template>
@@ -28,17 +27,25 @@ defineProps({
 .message-box {
   border-radius: 6px;
   padding: 10px;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .message-box.sent {
-  color: white;
-  background-color: #4e8cff;
+  color: rgb(0, 0, 0);
+  background-color: #FFE082;
   margin-left: auto;
+  font-size: large;
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .message-box.recieved {
-  color: #263238;
-  background-color: #f4f7f9;
+  color: #ffffff;
+  background-color: #283593;
+  font-size: large;
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 </style>

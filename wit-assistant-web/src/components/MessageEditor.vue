@@ -17,13 +17,32 @@ function sendMessage() {
 
   text.value = '';
 }
+
 </script>
 
 <template>
-  <form @submit.prevent="sendMessage" class="question-box">
-    <input type="text" :disabled v-model="text">
-    <button type="submit" :disabled >Ask</button>
-  </form>
+  <v-form @submit.prevent="sendMessage" class="question-box">
+    <v-text-field
+      type="text"
+      :disabled="disabled"
+      density="comfortable"
+      variant="outlined"
+      label="Ask WISE A Question!"
+      color="white"
+      v-model="text"
+    >
+      <template v-slot:append-inner>
+        <v-btn
+          @click="sendMessage"
+          type="submit"
+          :disabled="disabled"
+          color="white"
+          icon="mdi-chevron-up"
+          variant="text"
+        ></v-btn>
+      </template>
+    </v-text-field>
+  </v-form>
 </template>
 
 <style>

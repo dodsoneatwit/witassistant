@@ -1,3 +1,12 @@
+<template>
+  <div class="flex-col">
+    <li v-for="(mes, index) in mStore.messages" :key="index">
+      <ChatMessage :message="mes" />
+    </li>
+    <MessageEditor @message="onMessage" />
+  </div>
+</template>
+
 <script setup lang="ts">
 import ChatMessage from './ChatMessage.vue';
 import MessageEditor from './MessageEditor.vue';
@@ -22,14 +31,29 @@ function onMessage(text: string) {
   </div>
 </template>
 
-<style>
+<style scoped>
 .flex-col {
   display: flex;
   flex-direction: column;
+  width: 50rem; /* Initial width */
 }
 
 li {
   display: block;
   margin-bottom: 10px;  
+}
+
+/* Media query for medium screens */
+@media (max-width: 1200px) {
+  .flex-col {
+    width: 40rem;
+  }
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .flex-col {
+    width: 26.5rem;
+  }
 }
 </style>
