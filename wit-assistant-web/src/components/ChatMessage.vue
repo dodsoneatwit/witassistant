@@ -7,22 +7,16 @@ defineProps({
     required: true,
   }
 });
-
 </script>
 
 <template>
   <div class="chat-message">
-    <v-chip 
-      size="x-large"
-      density="comfortable"
-      variant="elevated"
-      :color= "message.sender === 'self' ? 'amber-accent-1' : 'indigo-darken-3'"
-      class="message-box" :class="{
-        sent: message.sender === 'self',
-        recieved: message.sender !== 'self'
-      }">
-        {{ message.text }}
-  </v-chip>
+    <div class="message-box" :class="{
+      sent: message.sender === 'self',
+      recieved: message.sender !== 'self'
+    }">
+      {{ message.text }}
+    </div>
   </div>
 </template>
 
@@ -37,13 +31,21 @@ defineProps({
 }
 
 .message-box.sent {
-  color: white;
-  background-color: #4e8cff;
+  color: rgb(0, 0, 0);
+  background-color: #FFE082;
   margin-left: auto;
+  font-size: large;
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .message-box.recieved {
-  color: #263238;
-  background-color: #f4f7f9;
+  color: #ffffff;
+  background-color: #283593;
+  font-size: large;
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 </style>

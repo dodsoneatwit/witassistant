@@ -4,30 +4,47 @@ import ChatConversation from './components/ChatConversation.vue';
 </script>
 
 <template>
-  <main>
-    <!-- <v-toolbar class="title" color='indigo-darken-4' dark>
-      <v-row>
-        <v-col cols="2">
-        </v-col>
-        <v-col class="">
-          <v-toolbar-title class="text-center mt-3">
-            <span class="title anta-regular">WISE</span>
-          </v-toolbar-title>
-        </v-col>
-      </v-row>
-    </v-toolbar> -->
-    <ChatConversation />
-  </main>
+    <main>
+      <v-toolbar 
+        :elevation="8" 
+        class="title justify-space-around" 
+        color='indigo-darken-4'
+        image="../public/images/pexels-ryutaro-6249821.jpg" 
+        dark
+      >
+        <v-row>
+          <v-col cols="2">
+          </v-col>
+          <v-col class="">
+            <v-toolbar-title class="text-center mt-3">
+              <span class="title anta-regular">WISE</span>
+            </v-toolbar-title>
+          </v-col>
+        </v-row>
+      </v-toolbar>
+      <div class="content">
+        <ChatConversation />
+      </div>
+    </main>
 </template>
 
 <style scoped>
-header {
+ /* header {
   line-height: 1.5;
-}
+} */
 
 .title {
-  font-size: 2.5rem;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 4rem;
+  font-family: "Josefin Slab", serif;
+  font-optical-sizing: auto;
+  padding-top: 3rem;
+  margin-bottom: 0; /* Removed margin-bottom to avoid pushing content down */
+  position: fixed; /* Fixed position to stick to the top */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure it is above other content */
+  height: 7rem
 }
 .logo {
   display: block;
@@ -50,5 +67,9 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
+}
+
+.content {
+  padding-top: 10rem; /* Add padding equal to the height of the toolbar */
 }
 </style>
