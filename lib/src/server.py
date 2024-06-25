@@ -23,8 +23,8 @@ def process_question():
             received_text = content['text']
             api_text = received_text  # Update the API text
             print(f"You sent: {received_text}")
-            response = run_model(received_text)
-            return jsonify({'response': response})
+            response, links = run_model(received_text)
+            return jsonify({'response': response, 'related_links': arrayToString(links)})
         else:
             return jsonify({'error': 'Invalid JSON payload'}), 400
     else:

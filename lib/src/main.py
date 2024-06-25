@@ -7,6 +7,18 @@ from langchain_ai21 import AI21ContextualAnswers
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
+def process_links(response, links):
+
+    no_dupes_links = list(set(links))
+    response += ""
+    num_of_links = 5
+    for index in range(len(no_dupes_links)):
+        if index == num_of_links:
+            break
+        response += no_dupes_links[index] + '\n'
+
+    return response
+
 load_dotenv()
 
 # Access the environment variables
@@ -41,4 +53,19 @@ def run_model(question):
     response = chain.invoke(
         {"context": found_docs, "question": question},
     )
-    return response
+
+    links = []
+    num_of_links = 5
+    for index in range(len(query_result)):
+        if len(links) == num_of_links:
+            break
+        if query_result[index].metadata != {} and query_result[index].metadata['source'] not in links:
+            links.append(query_result[index].metadata['source'])
+    
+    return response, links
+
+def arrayToString(links):
+    new_string = ""
+    for i in links:
+        new_string += i + "\n"
+    return new_string

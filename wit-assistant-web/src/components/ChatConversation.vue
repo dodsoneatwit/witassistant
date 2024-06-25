@@ -1,12 +1,3 @@
-<template>
-  <div class="flex-col">
-    <li v-for="(mes, index) in mStore.messages" :key="index">
-      <ChatMessage :message="mes" />
-    </li>
-    <MessageEditor @message="onMessage" />
-  </div>
-</template>
-
 <script setup lang="ts">
 import ChatMessage from './ChatMessage.vue';
 import MessageEditor from './MessageEditor.vue';
