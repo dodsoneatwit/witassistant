@@ -32,31 +32,31 @@ Install the latest version of Python at [python.org](https://www.python.org/down
 ## PIP commands for reference
 
 <b>Separate Commands:</b>
-pip install beautifulsoup4
-pip install re (comes with Python's standard library, no need to install)
-pip install copy (comes with Python's standard library, no need to install)
-pip install os (comes with Python's standard library, no need to install)
-pip install python-dotenv
-pip install langchain
-pip install langchain-chroma
-pip install langchain-community
-pip install langchain-core
-pip install langchain-openai
-pip install langchain-ai21
-pip install langchain-pinecone
-pip install requests
-pip install unstructured
-pip install pinecone-client
-pip install ratemyprofessor
-pip install urllib3 (urlparse and urljoin come with Python's standard library)
-pip install getpass (comes with Python's standard library, no need to install)
+- pip install beautifulsoup4
+- pip install re (comes with Python's standard library, no need to install)
+- pip install copy (comes with Python's standard library, no need to install)
+- pip install os (comes with Python's standard library, no need to install)
+- pip install python-dotenv
+- pip install langchain
+- pip install langchain-chroma
+- pip install langchain-community
+- pip install langchain-core
+- pip install langchain-openai
+- pip install langchain-ai21
+- pip install langchain-pinecone
+- pip install requests
+- pip install unstructured
+- pip install pinecone-client
+- pip install ratemyprofessor
+- pip install urllib3 (urlparse and urljoin come with Python's standard library)
+- pip install getpass (comes with Python's standard library, no need to install)
 
 <b>Single Line Command:</b> 
-pip install beautifulsoup4 python-dotenv langchain langchain-chroma langchain-community langchain-core langchain-openai langchain-ai21 langchain-pinecone requests unstructured pinecone-client ratemyprofessor urllib3
+- pip install beautifulsoup4 python-dotenv langchain langchain-chroma langchain-community langchain-core langchain-openai langchain-ai21 langchain-pinecone requests unstructured pinecone-client ratemyprofessor urllib3
 
 
 ## Authors
 
-Elijah Dodson
-Mason Osborn
-Devin Macmillan
+- Elijah Dodson
+- Mason Osborn
+- Devin Macmillan
