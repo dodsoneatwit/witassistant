@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ChatMessage from './ChatMessage.vue';
+import ChatSidebar from './ChatSidebar.vue';
 import MessageEditor from './MessageEditor.vue';
 import { useMessageStore } from '@/stores/messages';
 
@@ -20,6 +21,7 @@ function onMessage(text: string) {
     </li>
     <MessageEditor @message="onMessage" :disabled="mStore.loading" />
   </div>
+  <ChatSidebar />
 </template>
 
 <style scoped>

@@ -30,6 +30,7 @@ function sendMessage() {
       label="Ask WISE A Question!"
       color="white"
       v-model="text"
+      id="question-field"
     >
       <template v-slot:append-inner>
         <v-btn
@@ -37,7 +38,7 @@ function sendMessage() {
           type="submit"
           :disabled="disabled"
           color="white"
-          icon="mdi-chevron-up"
+          icon="mdi-chevron-right"
           variant="text"
         ></v-btn>
       </template>

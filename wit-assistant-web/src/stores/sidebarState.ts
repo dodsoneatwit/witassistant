@@ -5,9 +5,11 @@ export const useSidebarStore = defineStore('sidebarState', () => {
   const relatedLinks: Ref<string[]> = ref([]);
   const selectedMessage: Ref<Message | undefined> = ref(undefined);
 
-  const visible = ref(false);
+  const visible = ref(true);
 
-  function selectMessage() {
+  function selectMessage(message: Message) {
+    selectedMessage.value = message;
+    relatedLinks.value = message.relatedLinks || [];
 
   }
 

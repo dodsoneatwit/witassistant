@@ -8,6 +8,14 @@ console.log(state)
 <template>
   <aside>
     <h3>Related Links</h3>
+    <ul v-if="state.relatedLinks.length > 0">
+      <li v-for="link in state.relatedLinks" :key="link">
+        <a :href="link">{{ link }}</a>
+      </li>
+    </ul>
+    <div v-else>
+      There are no related links for this message.
+    </div>
   </aside>
 </template>
 
