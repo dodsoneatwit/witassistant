@@ -24,8 +24,7 @@ aside {
   position: fixed;
   height: 100%;
   z-index: 1;
-  top: 0;
+  top: 10rem;
   right: 0;
-
 }
 </style>

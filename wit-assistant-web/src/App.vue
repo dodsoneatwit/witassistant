@@ -4,28 +4,28 @@ import ChatConversation from './components/ChatConversation.vue';
 </script>
 
 <template>
-    <main>
-      <v-toolbar 
+  <v-toolbar 
         :elevation="8" 
         class="title justify-space-around" 
         color='indigo-darken-4'
         image="../public/images/pexels-ryutaro-6249821.jpg" 
         dark
       >
-        <v-row>
-          <v-col cols="2">
-          </v-col>
-          <v-col class="">
-            <v-toolbar-title class="text-center mt-3">
-              <span class="title anta-regular">WISE</span>
-            </v-toolbar-title>
-          </v-col>
-        </v-row>
-      </v-toolbar>
-      <div class="content">
-        <ChatConversation />
-      </div>
-    </main>
+    <v-row>
+      <v-col cols="2">
+      </v-col>
+      <v-col class="">
+        <v-toolbar-title class="text-center mt-3">
+          <span class="title anta-regular">WISE</span>
+        </v-toolbar-title>
+      </v-col>
+    </v-row>
+  </v-toolbar>
+  <main>
+    <div class="content">
+      <ChatConversation />
+    </div>
+  </main>
 </template>
 
 <style scoped>
@@ -69,7 +69,7 @@ import ChatConversation from './components/ChatConversation.vue';
   }
 }
 
-.content {
-  padding-top: 10rem; /* Add padding equal to the height of the toolbar */
+main {
+  margin-top: 10rem;
 }
 </style>
