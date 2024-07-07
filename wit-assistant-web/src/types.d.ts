@@ -7,5 +7,5 @@ type Message = {
 
 type Answer = {
   response: string,
-  relatedLinks?: string[]
+  related_links?: string[]
 }
