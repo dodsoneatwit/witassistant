@@ -5,6 +5,10 @@ defineProps({
   message: {
     type: Object as PropType<Message>,
     required: true,
+  },
+  selected: {
+    type: Boolean,
+    default: false
   }
 });
 </script>
@@ -13,7 +17,8 @@ defineProps({
   <div class="chat-message">
     <div class="message-box" :class="{
       sent: message.sender === 'self',
-      recieved: message.sender !== 'self'
+      recieved: message.sender !== 'self',
+      selected,
     }">
       {{ message.text }}
     </div>
@@ -47,5 +52,9 @@ defineProps({
   font-family: "Red Hat Display", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+.message-box.recieved.selected {
+  background-color: #656fbc;
 }
 </style>

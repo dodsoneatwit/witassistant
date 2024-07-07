@@ -19,12 +19,13 @@ console.log(state)
   </aside>
 </template>
 
-<style>
+<style scoped>
 aside {
   position: fixed;
   height: 100%;
   z-index: 1;
   top: 10rem;
   right: 0;
+  width: 17%;
 }
 </style>
