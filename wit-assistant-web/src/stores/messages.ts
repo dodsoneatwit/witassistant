@@ -1,7 +1,10 @@
 import { ref, computed, type Ref } from 'vue'
 import { defineStore } from 'pinia'
+import { useSidebarStore } from './sidebarState';
 
 export const useMessageStore = defineStore('message', () => {
+  const sidebarState = useSidebarStore();
+
   const messages: Ref<Message[]> = ref([{
     text: 'Welcome to the assistant! What can I help you with?',
     sender: 'assistant'
@@ -21,6 +24,16 @@ export const useMessageStore = defineStore('message', () => {
       sender: 'self'
     });
 
+    loading.value = true;
+
+    // if calling api is disabled, return fake response
+    if (import.meta.env.VITE_FAKE_API?.length || 0 > 0) {
+      // wait 2 seconds
+      await new Promise(r => setTimeout(r, 2000));
+      // fake response with fake relatedlinks
+      return response({ response: 'test response', relatedLinks: ['https://google.com', 'https://wit.edu', 'https://github.com'] });
+    }
+
     // get ai response
     // console.log(import.meta.env.VITE_API_ENDPOINT)
     const url = import.meta.env.VITE_API_ENDPOINT + '/q&a';
@@ -32,20 +45,29 @@ export const useMessageStore = defineStore('message', () => {
       },
       body: JSON.stringify({ text })
     };
-    loading.value = true;
     const answer = await fetch(url, fetchOptions).then(resp => resp.json()).catch(err => {
       loading.value = false;
       console.warn('Error querying API: ' + err);
-      });
-    response(answer.response);
+    });
+    return response(answer);
   }
 
-  function response(text: string) {
+  function response(answer: Answer) {
     loading.value = false;
-    pushMessage({
-      text,
-      sender: 'assistant'
-    })
+    const mess: Message = {
+      text: answer.response,
+      sender: 'assistant',
+      relatedLinks: answer.relatedLinks
+    };
+    pushMessage(mess);
+
+    // convenience, re-focus question field after re-enabling
+    document.getElementById('question-field')?.focus()
+
+    if (answer.relatedLinks != undefined && answer.relatedLinks.length > 0) {
+      sidebarState.selectMessage(mess);
+      sidebarState.visible = true;
+    }
   }
 
   return { messages, latest, loading, pushMessage, askQuestion, response }

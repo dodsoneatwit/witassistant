@@ -1,12 +1,20 @@
 <script setup lang="ts">
+import { useSidebarStore } from '@/stores/sidebarState';
 import ChatMessage from './ChatMessage.vue';
+import ChatSidebar from './ChatSidebar.vue';
 import MessageEditor from './MessageEditor.vue';
 import { useMessageStore } from '@/stores/messages';
 
 const mStore = useMessageStore();
+const sideStore = useSidebarStore();
 
 function onMessage(text: string) {
   mStore.askQuestion(text);
+}
+
+function messageClick(evt: Event, mes: Message) {
+  sideStore.selectMessage(mes);
+  sideStore.visible = true;
 }
 
 // TODO: Add loading message to make it clear a response is coming, and that's why the ask box is disabled
@@ -16,10 +24,11 @@ function onMessage(text: string) {
 <template>
   <div class="flex-col">
     <li v-for="(mes, index) in mStore.messages" :key="index">
-      <ChatMessage :message="mes" />
+      <ChatMessage :message="mes" @click="messageClick($event, mes)" :selected="mes === sideStore.selectedMessage"/>
     </li>
     <MessageEditor @message="onMessage" :disabled="mStore.loading" />
   </div>
+  <ChatSidebar />
 </template>
 
 <style scoped>
