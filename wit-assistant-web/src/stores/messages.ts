@@ -31,7 +31,7 @@ export const useMessageStore = defineStore('message', () => {
       // wait 2 seconds
       await new Promise(r => setTimeout(r, 2000));
       // fake response with fake relatedlinks
-      return response({ response: 'test response', relatedLinks: ['https://google.com', 'https://wit.edu', 'https://github.com'] });
+      return response({ response: 'test response', related_links: ['https://google.com', 'https://wit.edu', 'https://github.com'] });
     }
 
     // get ai response
@@ -57,14 +57,14 @@ export const useMessageStore = defineStore('message', () => {
     const mess: Message = {
       text: answer.response,
       sender: 'assistant',
-      relatedLinks: answer.relatedLinks
+      relatedLinks: answer.related_links
     };
     pushMessage(mess);
 
     // convenience, re-focus question field after re-enabling
     document.getElementById('question-field')?.focus()
 
-    if (answer.relatedLinks != undefined && answer.relatedLinks.length > 0) {
+    if (mess.relatedLinks != undefined && mess.relatedLinks.length > 0) {
       sidebarState.selectMessage(mess);
       sidebarState.visible = true;
     }

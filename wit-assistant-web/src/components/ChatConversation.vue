@@ -12,7 +12,10 @@ function onMessage(text: string) {
   mStore.askQuestion(text);
 }
 
-function messageClick(evt: Event, mes: Message) {
+function messageClick(_evt: Event, mes: Message) {
+  if (mes.sender === 'self') {
+    return;
+  }
   sideStore.selectMessage(mes);
   sideStore.visible = true;
 }
