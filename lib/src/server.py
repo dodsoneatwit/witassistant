@@ -24,6 +24,8 @@ def process_question():
             api_text = received_text  # Update the API text
             print(f"You sent: {received_text}")
             response, links = run_model(received_text)
+            if response == "Answer not in context":
+                response = f"I'm not quite sure. This link may help instead: {links[0]}"
             return jsonify({'response': response, 'related_links': links})
         else:
             return jsonify({'error': 'Invalid JSON payload'}), 400

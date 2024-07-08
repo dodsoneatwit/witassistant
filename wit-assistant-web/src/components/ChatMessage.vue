@@ -38,19 +38,21 @@ defineProps({
   color: rgb(0, 0, 0);
   background-color: #FFE082;
   margin-left: auto;
-  font-size: large;
+  font-size: 1.5rem;
   font-family: "Red Hat Display", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  padding: 1rem;
 }
 
 .message-box.recieved {
   color: #ffffff;
   background-color: #283593;
-  font-size: large;
+  font-size: 1.5rem;
   font-family: "Red Hat Display", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  padding: 1rem;
 }
 
 .message-box.recieved.selected {
