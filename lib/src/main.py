@@ -44,14 +44,14 @@ chain = tsm | StrOutputParser()
 def run_model(question):
 
     # searchs for results within database that link to question
-    query_result = generalWit.max_marginal_relevance_search(question, k=5, fetch_k=10)
+    query_result = generalWit.max_marginal_relevance_search(question, k=100, fetch_k=350)
     found_docs = ""
 
     # invokes a response from queried data and context
     for i, doc in enumerate(query_result):
         found_docs = found_docs + doc.page_content + " "
     response = chain.invoke(
-        {"context": found_docs, "question": question},
+        {"context": found_docs[:15000], "question": question},
     )
 
     links = []

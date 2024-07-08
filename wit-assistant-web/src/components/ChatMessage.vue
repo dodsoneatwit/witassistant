@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-
 defineProps({
   message: {
     type: Object as PropType<Message>,
