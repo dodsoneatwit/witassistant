@@ -25,16 +25,18 @@ function messageClick(_evt: Event, mes: Message) {
 </script>
 
 <template>
-  <div class="flex-col">
-    <li v-for="(mes, index) in mStore.messages" :key="index">
-      <ChatMessage :message="mes" @click="messageClick($event, mes)" :selected="mes === sideStore.selectedMessage"/>
-    </li>
-    <div class="loader" v-if="mStore.messages.length % 2 === 0">
-      <v-skeleton-loader :elevation="5" color="primary" type="text"></v-skeleton-loader>
+  <div>
+    <div class="flex-col">
+      <li v-for="(mes, index) in mStore.messages" :key="index">
+        <ChatMessage :message="mes" @click="messageClick($event, mes)" :selected="mes === sideStore.selectedMessage"/>
+      </li>
+      <div class="loader" v-if="mStore.messages.length % 2 === 0">
+        <v-skeleton-loader :class="`cursor-wait`" :elevation="5" color="cyan-lighten-1" type="text"></v-skeleton-loader>
+      </div>
+      <MessageEditor @message="onMessage" :disabled="mStore.loading" />
     </div>
-    <MessageEditor @message="onMessage" :disabled="mStore.loading" />
+    <ChatSidebar />
   </div>
-  <ChatSidebar />
 </template>
 
 <style scoped>

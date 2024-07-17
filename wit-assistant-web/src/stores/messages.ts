@@ -6,8 +6,8 @@ export const useMessageStore = defineStore('message', () => {
   const sidebarState = useSidebarStore();
 
   const messages: Ref<Message[]> = ref([{
-    text: 'Welcome to the assistant! What can I help you with?',
-    sender: 'assistant'
+    text: 'Welcome to the WISE (Wentworth Intelligent Support Entity)! What can I help you with?',
+    sender: 'assistant-initial'
   }]);
   const loading: Ref<boolean> = ref(false);
 
@@ -36,7 +36,7 @@ export const useMessageStore = defineStore('message', () => {
 
     // get ai response
     // console.log(import.meta.env.VITE_API_ENDPOINT)
-    const url = import.meta.env.VITE_API_ENDPOINT + '/q&a';
+    const url = "http://127.0.0.1:5000/api/q&a";
     const fetchOptions = {
       method: 'POST',
       headers: {

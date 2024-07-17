@@ -4,34 +4,33 @@ import ChatConversation from './components/ChatConversation.vue';
 </script>
 
 <template>
-  <v-toolbar 
-        :elevation="8" 
-        class="title justify-space-around" 
-        color='indigo-darken-4'
-        image="../public/images/pexels-ryutaro-6249821.jpg" 
-        dark
-      >
-    <v-row>
-      <v-col cols="2">
-      </v-col>
-      <v-col class="">
-        <v-toolbar-title class="text-center mt-3">
-          <span class="title anta-regular">WISE</span>
-        </v-toolbar-title>
-      </v-col>
-    </v-row>
-  </v-toolbar>
-  <main>
-    <div class="content">
-      <ChatConversation />
-    </div>
-  </main>
+  <div>
+    <v-toolbar 
+          :elevation="8" 
+          class="title justify-space-around border-nav" 
+          color='indigo-darken-4'
+          image="../public/images/pexels-ryutaro-6249821.jpg" 
+          dark
+        >
+      <v-row>
+        <v-col cols="2">
+        </v-col>
+        <v-col class="">
+          <v-toolbar-title class="text-center mt-3">
+            <span class="title anta-regular">WISE</span>
+          </v-toolbar-title>
+        </v-col>
+      </v-row>
+    </v-toolbar>
+    <main>
+      <div>
+        <ChatConversation />
+      </div>
+    </main>
+  </div>
 </template>
 
 <style scoped>
- /* header {
-  line-height: 1.5;
-} */
 
 .title {
   font-size: 4rem;
@@ -49,6 +48,10 @@ import ChatConversation from './components/ChatConversation.vue';
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+
+.border-nav{
+  box-shadow: 0px 0px 15px rgb(48, 28, 229) !important;
 }
 
 @media (min-width: 1024px) {

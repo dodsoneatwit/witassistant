@@ -1,31 +1,25 @@
 <script setup lang="ts">
 import { useSidebarStore } from '@/stores/sidebarState'; 
 const state = useSidebarStore()
-
 console.log(state)
 </script>
 
 <template>
   <aside>
-    <h2>Related Links</h2>
+    <h2 class="raw-style">Related Links</h2>
     <ul v-if="state.relatedLinks.length > 0">
       <li v-for="link in state.relatedLinks" :key="link">
-        <!-- <v-chip>
-          <a :href="link" target="_blank">{{ link }}</a>
-        </v-chip> -->
-        <!-- <a :href="link" target="_blank">{{ link }}</a> -->
         <v-card 
         color="#283593"
-        :variant="outlined"
         elevation="5"
-        :href="link"
+        :href="link"  
         class="link"
         >
           {{ link }}
         </v-card>
       </li>
     </ul>
-    <div v-else>
+    <div class="raw-style" v-else>
       There are no related links for this message.
     </div>
   </aside>
@@ -43,8 +37,25 @@ aside {
 
 .link {
   margin: .5rem;
-  font-family: "Red Hat Display", sans-serif;
-  padding: .5rem
+  background-image: linear-gradient( to bottom right, #562ab6 15%, #283593 90%);
+  font-family: "Dosis", sans-serif;
+  font-style: normal;
+  border: 2px solid rgb(246, 244, 244);
+  padding: .5rem;
+  border-radius: 1rem;
+  transition-duration: 0.5s;
+}
+
+.link:hover {
+  box-shadow: 0px 0px 30px rgb(109, 202, 225) !important;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.raw-style {
+  font-family: "Dosis", sans-serif;
+  font-style: normal;
+  font-weight: 500;
 }
 
 h2 {
