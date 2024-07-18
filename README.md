@@ -18,6 +18,12 @@ Install the latest version of Python at [python.org](https://www.python.org/down
 
 2. Enter the command <b> python server.py</b> to start the server
 
+3. Server should run on <b>localhost:5173</b> (shows in terminal when running <b>npm run dev</b>)
+
+<b>Note</b>: If <b>localhost</b> connection does not respond, connect to the IP address instead
+instead by redirecting the URL in <b>witassistant/lib/src/main.py</b> and 
+<b>witassistant/wit-assistant-web/src/stores/messages.ts</b> to <b>http://127.0.0.1:5000/api/q&a</b>
+
 ## Running the Front-End With Vue.js
 
 1. Navigate into the UI environment using the terminal while entering <b>cd wit-assistant-web</b>

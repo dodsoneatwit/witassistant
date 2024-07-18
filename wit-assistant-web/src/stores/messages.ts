@@ -36,7 +36,8 @@ export const useMessageStore = defineStore('message', () => {
 
     // get ai response
     // console.log(import.meta.env.VITE_API_ENDPOINT)
-    const url = "http://127.0.0.1:5000/api/q&a";
+    // switch to http://127.0.0.1:5000/api/q&a if localhost not responding
+    const url = import.meta.env.VITE_API_ENDPOINT + '/q&a';
     const fetchOptions = {
       method: 'POST',
       headers: {

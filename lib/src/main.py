@@ -26,7 +26,9 @@ openai_api_key = os.getenv('OPENAI_API_KEY')
 ai_twentyone_api_key = os.getenv('AI_TWENTYONE_API_KEY')
 pinecone_api_key = os.getenv('PINECONE_API_KEY')
 pc_index_wit = os.getenv('PINECONE_WIT_SEMANTIC')
-url = "http://127.0.0.1:5000/api/q&a"
+
+# switch to http://127.0.0.1:5000/api/q&a if localhost not responding
+url = os.getenv('FLASK_SERVER')
 
 os.environ["AI21_API_KEY"] = ai_twentyone_api_key
 os.environ['OPENAI_API_KEY'] = openai_api_key
