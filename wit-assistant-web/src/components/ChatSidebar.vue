@@ -64,6 +64,6 @@ h2 {
 }
 
 ul {
-  list-style-image: url('../../public/WISE_favicon.ico');
+  list-style: none;
 }
 </style>

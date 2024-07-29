@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
+let temp = ""
 defineProps({
   message: {
     type: Object as PropType<Message>,
@@ -12,9 +13,10 @@ defineProps({
 });
 
 function processListItems(text: string) {
-  let colon = /: /
-  let dashes = /- /
-  let commas = /,/
+  text = text.split("\n").join(" ")
+  let colon = /: /;
+  let dashes = /- /;
+  let commas = /,/;
   let nums = /\d+\./g;
   let split = [];
 
@@ -34,12 +36,12 @@ function processListItems(text: string) {
     items = list_string.split(/\d+\./).filter(item => item.trim() !== "").map(item => item.trim());
   }
 
-  beforeList += "<ul class='received-list'>"
+  beforeList += "<ul"
   items.forEach(item => {
-    let reprocessedItem = processListItems(item)
-    beforeList += "<li>" + reprocessedItem + "</li>"
+    // let reprocessedItem = processListItems(item)
+    beforeList += "<li>" + item + "</li>"
   })
-  beforeList += "<ul>"
+  beforeList += "</ul>"
 
   return beforeList
 
@@ -64,8 +66,9 @@ function splitToParagraphs(message: string) {
   if (paragraph.length > 0) {
     essay += paragraph.join(". ");
   }
-  
-  return essay;
+  temp = processListItems(essay)
+  return temp;
+  //return essay
 }
 
 </script>
