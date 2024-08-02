@@ -1,0 +1,11 @@
+@startuml test
+
+actor user1
+
+user1 --> (info on semester courses) #red;line.dotted;text:blue   : scheduling
+user1 --> (professor/faculty's email\n address or phone number) #red;line.dotted;text:blue  : contacting
+user1 --> (Wentworth statistics) #red;line.dotted;text:blue   : analysis
+user1 --> (Boston things to do) #red;line.dotted;text:blue   : adventuring
+user1 --> (co-ops and careers details) #red;line.dotted;text:blue   : preparation
+
+@enduml

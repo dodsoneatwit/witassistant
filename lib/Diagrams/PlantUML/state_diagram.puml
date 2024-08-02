@@ -1,0 +1,19 @@
+@startuml test
+
+
+state "Sources Analysis" as Analysis #LightYellow : web, datasheets, pdfs, etc.
+state Extraction #LightYellow : Utilizing document loaders to \npull content in text form
+state Preprocessing #LightYellow : Reviewing data for organization, \ncleaning, splitting, etc.
+state Vectorization #LightYellow : Transforming data into vector embeddings \nfor Pinecone database storage
+state Retrieval #LightYellow : Executing cosine similarity search \nto retrieve content relevant to input
+state Formation #LightYellow : Invoke unique response from AI21 LLM\n based off of queried results
+
+[*] -down-> Analysis
+Analysis -down-> Extraction
+Extraction -down-> Preprocessing
+Preprocessing -down-> Vectorization
+Vectorization -down-> Retrieval
+Retrieval -down-> Formation
+Formation -down-> [*]
+
+@enduml

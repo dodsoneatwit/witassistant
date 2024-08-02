@@ -20,8 +20,6 @@ function messageClick(_evt: Event, mes: Message) {
   sideStore.visible = true;
 }
 
-// TODO: Add loading message to make it clear a response is coming, and that's why the ask box is disabled
-// TODO: Maybe extract message box out to make it easier to have error messages and such?
 </script>
 
 <template>

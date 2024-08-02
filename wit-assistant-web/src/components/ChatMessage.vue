@@ -12,14 +12,21 @@ defineProps({
   }
 });
 
+/**
+ * @param {string} text - assistant response content
+ * @returns {string} HTML formatted list content
+ */
 function processListItems(text: string) {
   text = text.split("\n").join(" ")
+
+  // regex checking to determine split
   let colon = /: /;
   let dashes = /- /;
   let commas = /,/;
   let nums = /\d+\./g;
   let split = [];
 
+  // return early if list does not exist
   if (!colon.test(text)) {
     return text
   }
@@ -28,6 +35,8 @@ function processListItems(text: string) {
   let beforeList = split[0] + ": <br>" 
   let list_string = split[1];
   let items: any[] = []
+
+  // split list by corresponding special character
   if (dashes.test(list_string)) {
     items = list_string.split(" - ").map(item => item.trim().replace(/\.$/, ''))
   } else if (commas.test(list_string)) {
@@ -36,9 +45,9 @@ function processListItems(text: string) {
     items = list_string.split(/\d+\./).filter(item => item.trim() !== "").map(item => item.trim());
   }
 
+  // format content with proper HTML list tags
   beforeList += "<ul"
   items.forEach(item => {
-    // let reprocessedItem = processListItems(item)
     beforeList += "<li>" + item + "</li>"
   })
   beforeList += "</ul>"
@@ -47,12 +56,17 @@ function processListItems(text: string) {
 
 }
 
+/**
+ * @param {string} message - assistant response content
+ * @returns {string} paragraph separated text
+ */
 function splitToParagraphs(message: string) {
   let sentences = message.split(". ");
   let limit = 5;
   let paragraphs = [];
   let paragraph = [];
   
+  // split content into spaced paragraphs
   for (let i = 0; i < sentences.length; i++) {
     paragraph.push(sentences[i]);
     if (paragraph.length === limit) {
@@ -66,6 +80,8 @@ function splitToParagraphs(message: string) {
   if (paragraph.length > 0) {
     essay += paragraph.join(". ");
   }
+
+  // formats list content with proper HTML tags
   temp = processListItems(essay)
   return temp;
   //return essay
