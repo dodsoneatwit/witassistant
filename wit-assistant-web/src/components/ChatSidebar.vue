@@ -14,6 +14,7 @@ console.log(state)
         elevation="5"
         :href="link"  
         class="link"
+        target="blank"
         >
           {{ link }}
         </v-card>
