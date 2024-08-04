@@ -1,4 +1,7 @@
 <script setup lang="ts">
+/**
+ * A container for the separate parts of the app (message list, message editor, sidebar)
+ */
 import { useSidebarStore } from '@/stores/sidebarState';
 import ChatMessage from './ChatMessage.vue';
 import ChatSidebar from './ChatSidebar.vue';
@@ -26,7 +29,7 @@ function messageClick(_evt: Event, mes: Message) {
   <div>
     <div class="flex-col">
       <li v-for="(mes, index) in mStore.messages" :key="index">
-        <ChatMessage :message="mes" @click="messageClick($event, mes)" :selected="mes === sideStore.selectedMessage"/>
+        <ChatMessage :message="mes" @click="messageClick($event, mes)" :selected="mes === sideStore.selectedMessage" />
       </li>
       <div class="loader" v-if="mStore.messages.length % 2 === 0">
         <v-skeleton-loader :class="`cursor-wait`" :elevation="5" color="cyan-lighten-1" type="text"></v-skeleton-loader>
@@ -42,15 +45,17 @@ function messageClick(_evt: Event, mes: Message) {
   margin-bottom: 1rem;
   margin-right: 50%
 }
+
 .flex-col {
   display: flex;
   flex-direction: column;
-  width: 50rem; /* Initial width */
+  /* Initial width */
+  width: 50rem;
 }
 
 li {
   display: block;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
 }
 
 /* Media query for medium screens */

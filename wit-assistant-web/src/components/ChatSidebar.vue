@@ -1,4 +1,7 @@
 <script setup lang="ts">
+/**
+ * Shows related links on the side for currently selected message
+ */
 import { useSidebarStore } from '@/stores/sidebarState'; 
 const state = useSidebarStore()
 console.log(state)

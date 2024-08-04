@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { ref, type Ref } from "vue";
 
+// holds the selected message and it's related links
 export const useSidebarStore = defineStore('sidebarState', () => {
   const relatedLinks: Ref<string[]> = ref([]);
   const selectedMessage: Ref<Message | undefined> = ref(undefined);
