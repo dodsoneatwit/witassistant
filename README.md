@@ -16,6 +16,8 @@ Install the latest version of Python at [python.org](https://www.python.org/down
 
 ## Starting the Server
 
+![Alt text](lib/Diagrams/Final/Senior_Project_Sequence_diagram.png)
+
 1. Navigate into the back-end environment using the terminal and enter <b>cd lib/src</b>
 
 2. Enter the command <b> python server.py</b> to start the server
@@ -25,6 +27,10 @@ Install the latest version of Python at [python.org](https://www.python.org/down
 <b>Note</b>: If <b>localhost</b> connection does not respond, connect to the IP address instead
 instead by redirecting the URL in <b>witassistant/lib/src/main.py</b> and 
 <b>witassistant/wit-assistant-web/src/stores/messages.ts</b> to <b>http://127.0.0.1:5000/api/q&a</b>
+
+## Retrieval-Based Prompt Execution
+
+![Alt text](lib/Diagrams/Final/Senior_Project_WISE_State_Diagram.png)
 
 ## Running the Front-End With Vue.js
 
