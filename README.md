@@ -1,6 +1,6 @@
 # WISE (Wentworth Intelligent Support Entity)
 
-![Alt text](lib/Images/demo.png)
+
 
 ## About
 
