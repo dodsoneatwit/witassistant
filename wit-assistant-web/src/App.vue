@@ -9,7 +9,7 @@ import ChatConversation from './components/ChatConversation.vue';
           :elevation="8" 
           class="title justify-space-around border-nav" 
           color='indigo-darken-4'
-          image="../public/images/pexels-ryutaro-6249821.jpg" 
+          image="/images/pexels-ryutaro-6249821.jpg" 
           dark
         >
       <v-row>

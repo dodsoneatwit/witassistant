@@ -9,6 +9,9 @@ defineProps({
 });
 let text = ref('');
 
+/**
+ * This component emits a message event when the user finishes a message and hits send
+ */
 const emit = defineEmits(['message']);
 
 function sendMessage() {

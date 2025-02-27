@@ -5,14 +5,16 @@ import { useSidebarStore } from './sidebarState';
 export const useMessageStore = defineStore('message', () => {
   const sidebarState = useSidebarStore();
 
+  // set the initial message, to use during 
   const messages: Ref<Message[]> = ref([{
     text: 'Welcome to the WISE (Wentworth Intelligent Support Entity)! What can I help you with?',
     sender: 'assistant-initial'
   }]);
+  // set while waiting for a response from the API
   const loading: Ref<boolean> = ref(false);
 
-  // const doubleCount = computed(() => count.value * 2)
-  const latest = computed(() => messages.value);
+
+  const latest = computed(() => messages.value[messages.value.length - 1]);
 
   function pushMessage(message: Message) {
     messages.value.push(message);
@@ -53,6 +55,7 @@ export const useMessageStore = defineStore('message', () => {
     return response(answer);
   }
 
+  // take response, load it into messages, then select message for related links if it has any
   function response(answer: Answer) {
     loading.value = false;
     const mess: Message = {
