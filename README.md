@@ -1,5 +1,7 @@
 # WISE (Wentworth Intelligent Support Entity)
 
+
+
 ## About
 
 This project aims to answer the Wentworth community’s many questions by creating an AI chatbot that scrapes data from Wentworth-related social media, websites, emails, and events. Additional information will be sourced from Wentworth’s location to answer questions on nearby attractions, museums, and restaurants as well as from popular student resources such as ratemyprofessor.com. Answers from the bot will link back to relevant sources so users can verify the information or read more in depth on the topic.  
